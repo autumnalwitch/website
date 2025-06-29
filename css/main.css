@@ -233,68 +233,58 @@ nav {
 
 
 .site-footer {
-  background-color: #ffffff; /* dark background */
-  color: #eee;            /* light text */
-  padding: 2rem 1rem;
-  font-size: 0.9rem;
-  margin-top: 3rem;
+  background-color: #ffffff;
+  color: #696969;
+  font-size: 0.85rem;
+  margin-top: 1rem;
+  padding: 1rem 0;
 }
 
-.footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
+.footer-inner {
+  padding: 1rem 1rem 0.5rem 4.5rem; /* top-heavy padding */
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
 }
 
-.footer-brand h2 {
-  font-family: 'Work Sans Extra Light', sans-serif;
-  font-weight: 300;
+
+.footer-copy {
   margin: 0;
-  font-size: 1.8rem;
-  color: #CC5500; /* burnt orange accent */
+  font-family: 'Work Sans Extra Light', sans-serif;
+  font-size: 0.85rem;
 }
 
-.footer-nav a {
-  color: #eee;
-  text-decoration: none;
-  margin-left: 1.5rem;
-  transition: color 0.3s ease;
+.footer-socials {
+  display: flex;
+  gap: 0.75rem;
 }
 
-.footer-nav a:first-child {
-  margin-left: 0;
+.social-icon {
+  width: 14px;
+  height: 14px;
+  fill: #696969;
+  transition: fill 0.3s ease;
 }
 
-.footer-nav a:hover {
-  color: #CC5500; /* burnt orange on hover */
+.footer-socials a:hover .social-icon {
+  fill: #CC5500; /* burnt orange on hover */
 }
 
-.footer-bottom {
-  text-align: center;
-  margin-top: 1.5rem;
-  color: #888;
-}
-
-/* Responsive: stack on smaller screens */
 @media (max-width: 600px) {
-  .footer-content {
-    flex-direction: column;
+  .footer-inner {
+    padding-left: 1rem;
+    padding-right: 1rem;
     align-items: flex-start;
   }
 
-  .footer-nav {
-    margin-top: 1rem;
-  }
-
-  .footer-nav a {
-    margin-left: 0;
-    margin-right: 1rem;
+  .footer-socials {
+    flex-wrap: wrap;
+    gap: 0.5rem;
   }
 }
+
+
 
 
 
