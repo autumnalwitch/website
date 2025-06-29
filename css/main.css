@@ -186,8 +186,12 @@ nav {
 .about-section p {
   font-size: 1.1rem;
   color: #444;
+}
+
+.about-section p:not(:last-child) {
   margin-bottom: 1.5em;
 }
+
 
 /* Responsive */
 @media (max-width: 768px) {
