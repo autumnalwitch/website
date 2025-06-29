@@ -1,3 +1,19 @@
+@font-face {
+  font-family: "Saint Monica";
+  src: url("../fonts/Saint_Monica_Italic.ttf") format("truetype"),
+}
+
+@font-face {
+  font-family: "Work Sans Extra Light Italic";
+  src: url("../fonts/work-sans.extralight-italic.ttf") format("truetype"),
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/work-sans.extralight.ttf") format("truetype"),
+}
+
+
 * {
   box-sizing: border-box;
 }
@@ -745,6 +761,7 @@ body {
   font-size: 47px;
   opacity: 1;
   text-align: center;
+  font-family: "Saint Monica"
 }
 .v1_2379 {
   width: 126px;
