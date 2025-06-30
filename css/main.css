@@ -157,13 +157,24 @@ nav {
 }
 
 .logo a {
-  text-decoration: none !important;
-  color: inherit !important;
+  color: #3D0C01;          /* base color */
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .logo a:visited {
-  color: inherit !important;
-  text-decoration: none !important;
+  color: #3D0C01;          /* prevent purple */
+  text-decoration: none;
+}
+
+.logo a:hover {
+  color: #CC5500;          /* burnt orange on hover */
+  text-decoration: none;   /* or underline if you prefer */
+}
+
+.logo a:active {
+  color: #CC5500;
+  text-decoration: none;
 }
 
 
