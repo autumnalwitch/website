@@ -162,6 +162,15 @@ nav {
   transition: color 0.3s ease;
 }
 
+.logo a svg {
+  fill: #3D0C01;           /* base color for SVG */
+  transition: fill 0.3s ease;
+  display: inline-block;
+  position: relative;
+  bottom: -2px;
+  left: -3px;
+}
+
 .logo a:visited {
   color: #3D0C01;          /* prevent purple */
   text-decoration: none;
@@ -169,8 +178,11 @@ nav {
 
 .logo a:hover {
   color: #CC5500;          /* burnt orange on hover */
-  text-decoration: none;   
-  fill: #CC5500 !important;
+  text-decoration: none;
+}
+
+.logo a:hover svg {
+  fill: #CC5500 !important; /* burnt orange on hover */
 }
 
 .logo a:active {
