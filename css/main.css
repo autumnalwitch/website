@@ -169,7 +169,8 @@ nav {
 
 .logo a:hover {
   color: #CC5500;          /* burnt orange on hover */
-  text-decoration: none;   /* or underline if you prefer */
+  text-decoration: none;   
+  fill: #CC5500 !important;
 }
 
 .logo a:active {
@@ -389,17 +390,18 @@ nav {
 
 .resume-main {
   flex: 1;
-  padding: 4rem 3rem; /* Less horizontal padding */
+  padding: 4rem 3rem;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  align-items: stretch; /* Let cards fill width */
-  position: relative;
+  align-items: flex-start;
 }
+
 
 .section-card {
   width: 100%;
-  max-width: none;
+  min-height: 30vh;
+  max-width: 900px;
   background: white;
   border-radius: 12px;
   padding: 2rem;
@@ -409,22 +411,16 @@ nav {
   transform: translateY(20px);
   transition: opacity 0.6s ease, transform 0.6s ease;
   position: relative;
-  left: 0; /* changed from 50% to 0 for left align */
-  /* Remove translateX(-50%) since no centering */
-  transform: translateY(20px);
   pointer-events: none;
-  /* Add left margin to avoid sidebar */
-  margin-left: 1rem; /* adjust this value as needed */
-  max-width: 700px; /* keep max width */
+  margin-left: 1rem;
 }
 
-.section-card.active {
+.section-card.visible {
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
-  position: relative;
-  margin-left: 1rem; /* keep left margin on active cards */
 }
+
 
 .overview {
   position: relative;

@@ -31,41 +31,55 @@
   
   // ====== RESUME SIDEBAR & SCROLL ANIMATIONS ======
   (() => {
-    const sidebar = document.querySelector('.resume-sidebar nav');
-    if (!sidebar) return; // safely exit if sidebar not present
-  
-    const navItems = sidebar.querySelectorAll('li');
-    const indicatorDot = sidebar.querySelector('.indicator-dot');
     const sections = document.querySelectorAll('.section-card');
+    const navItems = document.querySelectorAll('.resume-sidebar nav ul li');
+    const indicatorDot = document.querySelector('.indicator-dot');
   
-    function updateActiveSection() {
-      let index = sections.length - 1;
+    let currentActive = -1;
   
-      for (let i = 0; i < sections.length; i++) {
-        const rect = sections[i].getBoundingClientRect();
-        if (rect.top > window.innerHeight * 0.25) {
-          index = i - 1;
-          break;
-        }
-      }
-      if (index < 0) index = 0;
+    const observer = new IntersectionObserver((entries) => {
+      let bestIndex = -1;
+      let closestToCenter = Infinity;
   
-      navItems.forEach(item => item.classList.remove('active'));
-      navItems[index].classList.add('active');
+      entries.forEach(entry => {
+        const index = Array.from(sections).indexOf(entry.target);
   
-      if (indicatorDot && navItems[index]) {
-        indicatorDot.style.top = navItems[index].offsetTop + (navItems[index].offsetHeight / 2) - (indicatorDot.offsetHeight / 2) + 'px';
-      }
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
   
-      sections.forEach((section, i) => {
-        if (i === index) {
-          section.classList.add('active');
+          const rect = entry.boundingClientRect;
+          const sectionCenter = rect.top + rect.height / 2;
+          const viewportCenter = window.innerHeight / 2;
+          const distance = Math.abs(sectionCenter - viewportCenter);
+  
+          if (distance < closestToCenter) {
+            closestToCenter = distance;
+            bestIndex = index;
+          }
         } else {
-          section.classList.remove('active');
+          entry.target.classList.remove('visible');
         }
       });
-    }
   
-    window.addEventListener('scroll', updateActiveSection);
-    window.addEventListener('load', updateActiveSection);
+      if (bestIndex !== -1 && bestIndex !== currentActive) {
+        currentActive = bestIndex;
+  
+        navItems.forEach(item => item.classList.remove('active'));
+        navItems[bestIndex]?.classList.add('active');
+  
+        if (navItems[bestIndex]) {
+          const activeItem = navItems[bestIndex];
+          indicatorDot.style.top =
+            activeItem.offsetTop +
+            (activeItem.offsetHeight / 2) -
+            (indicatorDot.offsetHeight / 2) + 'px';
+        }
+      }
+    }, {
+      threshold: [0.3, 0.6, 0.9] // multiple thresholds help trigger visibility consistently
+    });
+  
+    sections.forEach(section => observer.observe(section));
   })();
+  
+  
