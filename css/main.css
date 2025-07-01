@@ -276,22 +276,42 @@ nav {
 }
 
 .publication-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  display: flex;
+  flex-direction: column;
   gap: 2rem;
 }
 
 .publication-item {
   background-color: transparent;
+  border-bottom: 1px solid #ddd;
   padding: 1rem 0;
+  transition: all 0.3s ease;
 }
 
-.publication-item .bar {
-  height: 3px;
-  background-color: #000;
-  margin-bottom: 1rem;
-  width: 100%;
+.filter-container {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
 }
+
+.filter-btn {
+  padding: 0.4rem 1rem;
+  background-color: #eee;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: "Work Sans Extra Light", sans-serif;
+  transition: background-color 0.3s;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background-color: #CC5500;
+  color: white;
+}
+
+
 
 .publication-item h3 {
   font-size: 1.1rem;
@@ -320,6 +340,186 @@ nav {
 
 
 
+.resume-container {
+  display: flex;
+  min-height: 100vh;
+  background: #f5f1ea;
+}
+
+.resume-sidebar {
+  width: 220px;
+  background: #fff;
+  position: sticky;
+  top: 0;
+  padding: 2rem 1rem;
+  border-right: 3px solid #CC5500; /* orange bar on the side */
+  box-sizing: border-box;
+}
+
+.resume-sidebar nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+.resume-sidebar nav ul li {
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  font-family: "Work Sans Extra Light", sans-serif;
+  color: #333;
+  position: relative;
+}
+
+.resume-sidebar nav ul li.active {
+  font-weight: 700;
+  color: #CC5500;
+}
+
+.indicator-dot {
+  width: 10px;
+  height: 10px;
+  background-color: #CC5500;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  transition: top 0.3s ease;
+  top: 1.5rem; /* will be updated by JS */
+}
+
+.resume-main {
+  flex: 1;
+  padding: 4rem 3rem; /* Less horizontal padding */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; /* Let cards fill width */
+  position: relative;
+}
+
+.section-card {
+  width: 100%;
+  max-width: none;
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 15px rgb(0 0 0 / 0.1);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  position: relative;
+  left: 0; /* changed from 50% to 0 for left align */
+  /* Remove translateX(-50%) since no centering */
+  transform: translateY(20px);
+  pointer-events: none;
+  /* Add left margin to avoid sidebar */
+  margin-left: 1rem; /* adjust this value as needed */
+  max-width: 700px; /* keep max width */
+}
+
+.section-card.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  position: relative;
+  margin-left: 1rem; /* keep left margin on active cards */
+}
+
+.overview {
+  position: relative;
+  opacity: 1;
+  pointer-events: auto;
+  transform: none;
+  margin-bottom: 4rem;
+  max-width: 600px;
+  margin-left: 1rem; /* align overview with cards */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.contact-page {
+  background-color: #f5f1ea;
+  width: 100%;
+  padding: 3rem 0; /* vertical padding for breathing room */
+  box-sizing: border-box;
+}
+
+.contact-inner {
+  max-width: 600px;       /* controls content width */
+  margin: 0 auto;         /* centers horizontally */
+  padding: 0 1rem;        /* horizontal padding */
+  box-sizing: border-box;
+}
+
+
+
+.contact-page h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #3D0C01;
+}
+
+.contact-page p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: #444;
+}
+
+.contact-form label {
+  font-family: 'Work Sans Extra Light', sans-serif;
+  font-weight: 600;
+  color: #333;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  margin-top: 0.3rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: 'Work Sans Extra Light', sans-serif;
+  font-size: 1rem;
+  resize: vertical;
+}
+
+.contact-form button {
+  background-color: #CC5500;
+  border: none;
+  color: white;
+  padding: 0.8rem 2rem;
+  border-radius: 12px;
+  cursor: pointer;
+  font-family: 'Work Sans Extra Light', sans-serif;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #a04100;
+}
 
 
 

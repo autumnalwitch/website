@@ -12,7 +12,7 @@
 
     <nav class="navbar">
         <ul class="nav-links">
-          <li><a href="resume.html" class="ws-extralight">Resume</a></li>
+          <li><a href="#" class="ws-extralight">Resume</a></li>
       
           <li class="dropdown">
             <a href="projects.html" class="ws-extralight">Projects</a>
@@ -22,7 +22,7 @@
               <a href="personal.html" class="ws-extralight">Personal</a>
             </div>
           </li>
-
+      
           <li><a href="publications.html" class="ws-extralight">Publications</a></li>
         </ul>
         <div class="logo">
@@ -36,59 +36,29 @@
           </ul>
         
       </nav>
+
+
+      <main class="contact-page">
+        <div class="contact-inner">
+          <h1>Contact Me</h1>
+          <p>If you'd like to get in touch, please fill out the form below or email me at <a href="mailto:your.email@example.com">your.email@example.com</a>.</p>
       
+          <form class="contact-form" action="https://formspree.io/f/yourformid" method="POST">
+            <label for="name">Name</label><br />
+            <input type="text" id="name" name="name" required /><br /><br />
       
-      <section class="publications-section">
-        <div class="publications-inner">
-          <h2 class="year-heading">2025</h2>
+            <label for="email">Email</label><br />
+            <input type="email" id="email" name="email" required /><br /><br />
       
-          <!-- Filter Buttons -->
-          <div class="filter-container">
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="published">Published</button>
-            <button class="filter-btn" data-filter="preprint">Preprint</button>
-            <button class="filter-btn" data-filter="conference">Conference</button>
-          </div>
+            <label for="message">Message</label><br />
+            <textarea id="message" name="message" rows="6" required></textarea><br /><br />
       
-          <!-- Publications Grid -->
-          <div class="publication-grid">
-            <div class="publication-item" data-type="published">
-              <h3>Title of Published Paper</h3>
-              <p>Author Name(s). <em>Journal Name</em>, Volume(Issue), pages, Year.</p>
-              <a href="https://link-to-publication.com" target="_blank">Read more</a>
-            </div>
-      
-            <div class="publication-item" data-type="preprint">
-              <h3>Title of Preprint Paper</h3>
-              <p>Author Name(s). <em>arXiv</em>, Year.</p>
-              <a href="https://arxiv.org/abs/example" target="_blank">Read more</a>
-            </div>
-      
-            <div class="publication-item" data-type="conference">
-              <h3>Title of Conference Paper</h3>
-              <p>Author Name(s). In <em>Proceedings of Conference</em>, Year.</p>
-              <a href="https://conference-link.com" target="_blank">Read more</a>
-            </div>
-          </div>
+            <button type="submit">Send</button>
+          </form>
         </div>
-      </section>
+      </main>
+
       
-      
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
       <footer class="site-footer">
         <div class="footer-inner">
           <p class="footer-copy">&copy; Aut.mn 2025.</p>
@@ -115,7 +85,7 @@
   
   
   
-      <script src="script.js"></script>
+
 </body>
 </html>
 
